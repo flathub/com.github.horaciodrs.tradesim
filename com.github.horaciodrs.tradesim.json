@@ -1,10 +1,10 @@
 {
     "app-id": "com.github.horaciodrs.tradesim",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.38",
+    "runtime-version": "42",
     "sdk": "org.gnome.Sdk",
     "base":"io.elementary.BaseApp",
-    "base-version": "juno-19.08",
+    "base-version": "juno-21.08",
     "command": "com.github.horaciodrs.tradesim",
     "finish-args": [
         "--share=ipc",
