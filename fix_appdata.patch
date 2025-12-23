@@ -1,0 +1,67 @@
+From 217b6a71d25267699e60c958e0c97c9d231cafcd Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Wed, 24 Dec 2025 01:47:05 +0300
+Subject: [PATCH] Fix appdata papercuts
+
+---
+ data/com.github.horaciodrs.tradesim.appdata.xml.in | 34 ++++------------------------------
+ 1 file changed, 4 insertions(+), 30 deletions(-)
+
+diff --git a/data/com.github.horaciodrs.tradesim.appdata.xml.in b/data/com.github.horaciodrs.tradesim.appdata.xml.in
+index 6c92ce5..a8c2b41 100644
+--- a/data/com.github.horaciodrs.tradesim.appdata.xml.in
++++ b/data/com.github.horaciodrs.tradesim.appdata.xml.in
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!-- Copyright 2020 Horacio Daniel Ros <horaciodrs@gmail.com> -->
+-<component type="desktop">
++<component type="desktop-application">
+     <id>com.github.horaciodrs.tradesim</id>
+     <metadata_license>CC0</metadata_license>
+     <project_license>GPL-3.0+</project_license>
+@@ -83,39 +83,13 @@
+     <provides>
+         <binary>com.github.horaciodrs.tradesim</binary>
+     </provides>
+-    <content_rating type="oars-1.1">
+-        <content_attribute id="violence-cartoon">none</content_attribute>
+-        <content_attribute id="violence-fantasy">none</content_attribute>
+-        <content_attribute id="violence-realistic">none</content_attribute>
+-        <content_attribute id="violence-bloodshed">none</content_attribute>
+-        <content_attribute id="violence-sexual">none</content_attribute>
+-        <content_attribute id="violence-desecration">none</content_attribute>
+-        <content_attribute id="violence-slavery">none</content_attribute>
+-        <content_attribute id="violence-worship">none</content_attribute>
+-        <content_attribute id="drugs-alcohol">none</content_attribute>
+-        <content_attribute id="drugs-narcotics">none</content_attribute>
+-        <content_attribute id="drugs-tobacco">none</content_attribute>
+-        <content_attribute id="sex-nudity">none</content_attribute>
+-        <content_attribute id="sex-themes">none</content_attribute>
+-        <content_attribute id="sex-homosexuality">none</content_attribute>
+-        <content_attribute id="sex-prostitution">none</content_attribute>
+-        <content_attribute id="sex-adultery">none</content_attribute>
+-        <content_attribute id="sex-appearance">none</content_attribute>
+-        <content_attribute id="language-profanity">none</content_attribute>
+-        <content_attribute id="language-humor">none</content_attribute>
+-        <content_attribute id="language-discrimination">none</content_attribute>
+-        <content_attribute id="social-chat">none</content_attribute>
+-        <content_attribute id="social-info">none</content_attribute>
+-        <content_attribute id="social-audio">none</content_attribute>
+-        <content_attribute id="social-location">none</content_attribute>
+-        <content_attribute id="social-contacts">none</content_attribute>
+-        <content_attribute id="money-purchasing">none</content_attribute>
+-        <content_attribute id="money-gambling">none</content_attribute>
+-    </content_rating>
++    <content_rating type="oars-1.1"/>
+     <developer_name>Horacio Daniel Ros</developer_name>
+     <url type="homepage">https://github.com/horaciodrs/TradeSim</url>
+     <url type="bugtracker">https://github.com/horaciodrs/TradeSim/issues</url>
+     <url type="help">https://github.com/horaciodrs/TradeSim/issues</url>
++    <url type="vcs-browser">https://github.com/horaciodrs/TradeSim/issues</url>
++    <launchable type="desktop-id">com.github.horaciodrs.tradesim.desktop</launchable>
+     <update_contact>horaciodrs@gmail.com</update_contact>
+     <screenshots>
+         <screenshot type="default">
+--
+libgit2 1.7.2
+
