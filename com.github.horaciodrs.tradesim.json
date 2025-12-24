@@ -1,18 +1,34 @@
 {
     "app-id": "com.github.horaciodrs.tradesim",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "42",
-    "sdk": "org.gnome.Sdk",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "25.08",
     "base":"io.elementary.BaseApp",
-    "base-version": "juno-21.08",
+    "base-version": "circe-25.08",
+    "sdk": "org.freedesktop.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.vala"
+    ],
+    "build-options": {
+        "prepend-path": "/usr/lib/sdk/vala/bin/",
+        "prepend-ld-library-path": "/usr/lib/sdk/vala/lib"
+    },
     "command": "com.github.horaciodrs.tradesim",
     "finish-args": [
         "--share=ipc",
-        "--socket=fallback-x11",
-        "--socket=wayland",
+        "--socket=x11",
         "--talk-name=org.gtk.vfs.*"
     ],
     "modules": [
+        {
+            "name": "libgee",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.8.tar.xz",
+                    "sha256": "189815ac143d89867193b0c52b7dc31f3aa108a15f04d6b5dca2b6adfad0b0ee"
+                }
+            ]
+        },
         {
             "name": "tradesim",
             "buildsystem": "meson",
@@ -21,7 +37,16 @@
                     "type": "git",
                     "url": "https://github.com/horaciodrs/tradesim",
                     "tag": "2021.4.1"
+                },
+                {
+                    "type": "patch",
+                    "path": "fix_appdata.patch"
                 }
+            ],
+            "post-install" : [
+                "mkdir -p /app/share/icons/hicolor/scalable/apps",
+                "mv /app/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+                "find /app/share/icons/hicolor -type f -not -path \"*scalable*\" -not -path \"*actions*\" -name \"*.svg\" -delete"
             ]
         }
    ]
